@@ -1,0 +1,12 @@
+.chat-system-container{
+  border: 1px solid red;
+  width: 50rem;
+  margin: auto;
+}
+.chat-system-container .chat-head{
+  border: 1px solid red;
+  padding: 0.5rem;
+}
+.chat-system-container .chat-content{
+  padding: 0.5rem;
+}

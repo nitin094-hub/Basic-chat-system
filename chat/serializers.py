@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
         max_length=60,min_length=8,write_only=True)
     class Meta:
         model = User
-        fields = ['username','password']
+        fields = ['id','username','password']
 
     def validate(self,attrs):
         email = attrs.get('email','')

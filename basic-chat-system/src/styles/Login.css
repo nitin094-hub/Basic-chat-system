@@ -1,0 +1,9 @@
+.login-page{
+    width: 20%;
+    margin: auto;
+}
+.login-page .login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}

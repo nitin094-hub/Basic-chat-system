@@ -1,18 +1,20 @@
 import './App.css';
-import ChatBox from './components/ChatBox';
+import {Routes,Route} from "react-router-dom";
+import ChatRoom from './pages/ChatRoom';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <div className="chat-system-container">
-          <div className="chat-head">
-            <h4>Nitin Rajesh</h4>
-          </div>
-          <div className="chat-content">
-            <ChatBox alignment={true}/>
-            <ChatBox alignment={false}/>
-          </div>
-      </div>
+        <Routes>
+          <Route exact path='/login' element={<Login/>}/>  
+          <Route exact path='/sign-up' element={<SignUp/>}/>  
+          <Route exact path='/' element={<PrivateRoute/>}>
+              <Route path='chat-room' element={<ChatRoom/>}/>
+          </Route>
+        </Routes>      
     </div>
   );
 }

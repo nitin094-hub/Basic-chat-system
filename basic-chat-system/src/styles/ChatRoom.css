@@ -1,0 +1,26 @@
+.chat-system-container{
+    border: 1px solid red;
+    width: 50rem;
+    margin: auto;
+    margin-top: 3rem;
+  }
+  .chat-system-container .chat-head{
+    border-bottom: 1px solid red;
+    padding: 0.5rem;
+  }
+  .chat-system-container .chat-content{
+    padding: 0.5rem;
+    height: 21rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .chat-write{
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .chat-write textarea{
+    flex-basis: 95%;
+    outline: none;
+  }

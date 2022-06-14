@@ -24,6 +24,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         response = {
             "message":message,
             "send_by":self.user.username,
+            "sent_to":other_username
         }
 
         await self.channel_layer.group_send(
@@ -52,7 +53,3 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text = event['text']
         await self.send(text_data=text)
 
-
-    
-
-    

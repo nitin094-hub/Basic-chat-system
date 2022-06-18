@@ -1,26 +1,47 @@
-.chat-system-container{
-    border: 1px solid red;
-    width: 50rem;
-    margin: auto;
-    margin-top: 3rem;
-  }
-  .chat-system-container .chat-head{
-    border-bottom: 1px solid red;
-    padding: 0.5rem;
-  }
-  .chat-system-container .chat-content{
-    padding: 0.5rem;
-    height: 21rem;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .chat-write{
-    padding: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-  }
-  .chat-write textarea{
-    flex-basis: 95%;
-    outline: none;
-  }
+.chat-room-container{
+  display: flex;
+}
+.chat-room-container .left-container{
+  border: 1px solid red;
+  flex-basis: 20%;
+  padding: 0.5rem;
+}
+.chat-room-container .left-container input{
+  box-sizing: border-box;
+  width: 100%;
+}
+.chat-room-container .left-container .name-container{
+  border: 1px solid black;
+  padding: 0.4rem;
+  margin: 0.7rem 0;
+}
+.chat-room-container .left-container .name-container:hover{
+  background-color: rgb(228, 221, 221);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.chat-room-container .left-container .name-container h4{
+  margin: 0;
+}
+.chat-room-container .right-container{
+  border: 1px solid red;
+  flex-basis: 80%;
+}
+.chat-room-container .right-container .header{
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+}
+.chat-room-container .right-container .chat-container{
+  height: 35rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.chat-room-container .right-container .chat-write{
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.2rem;
+}
+.chat-room-container .right-container .chat-write textarea{
+  width: 100%;
+}

@@ -1,15 +1,16 @@
-import React from 'react'
-import ChatBox from "../components/ChatBox";
+import React from "react";
 import "../styles/ChatRoom.css";
-import {w3cwebsocket as W3CWebSocket} from "websocket";
-import { useEffect } from 'react';
-import { useState } from 'react';
+import {  client, w3cwebsocket as W3CWebSocket } from "websocket";
+import { useEffect,useState } from "react";
+import ChatBox from "../components/ChatBox";
 
-const client = new W3CWebSocket(`ws://127.0.0.1:8000/ws/?token=${localStorage.getItem("token")}`);
+client = new W3CWebSocket(`ws://127.0.0.1:8000/ws/?token=${localStorage.getItem("token")}`);
 
 function ChatRoom() {
 
+  const [username,setUsername] = useState("nitin094");
   const [message,setMessage] = useState("");
+  const [prevChat,setPrevChat] = useState([]);
 
   const sendMessage = ()=>{
     client.send(JSON.stringify({
@@ -17,33 +18,40 @@ function ChatRoom() {
       send_to:"nitin094"
     }))
   }
-  
+
   useEffect(()=>{
     client.onmessage = (msg)=>{
-      const dataFromServer = JSON.parse(msg.data);
-      console.log(dataFromServer);
+      const data = JSON.parse(msg.data);
+      console.log(data);
     }
   },[])
-
+  
   return (
-    <div className="chat-system-container">
-          <div className="chat-head">
-            <h4>Nitin Rajesh</h4>
-          </div>
-          <div className="chat-content">
-            <ChatBox alignment={true}/>
-            <ChatBox alignment={false}/>
-            <ChatBox alignment={false}/>
-            <ChatBox alignment={false}/>
-            <ChatBox alignment={false}/>
-            
-          </div>
-          <div className="chat-write">
-            <textarea type="text" value={message} onChange={(e)=>{setMessage(e.target.value)}}/>
-            <button onClick={sendMessage}>Send</button>
-          </div>
+    <div className="chat-room-container">
+      <div className="left-container">
+        <input type="text" placeholder="Search"/>
+        <div className="name-container">
+            <h4>Nitin</h4>
+        </div>
       </div>
-  )
+      <div className="right-container">
+        <div className="header">
+          <h4 style={{margin:"0"}}>Nitin</h4>
+        </div>
+        <div className="chat-container">
+          <ChatBox side={false}/>
+          <ChatBox side={true}/>
+          <ChatBox side={true}/>
+          <ChatBox side={true}/>
+          <ChatBox side={true}/>
+        </div>
+        <div className="chat-write">
+          <textarea name="chat"  value={message} onChange = {(e)=>{setMessage(e.target.value)}}></textarea>
+          <button onClick={sendMessage}>Send</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default ChatRoom
+export default ChatRoom;

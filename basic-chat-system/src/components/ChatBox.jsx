@@ -1,11 +1,9 @@
 import React from 'react'
 import "../styles/ChatBox.css";
 
-function ChatBox({alignment}) {
+function ChatBox({side}) {
   return (
-    <div className='chat-box-container' style={alignment ? {} : {marginLeft:"auto",marginRight:"0"}}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt saepe quibusdam temporibus unde at distinctio quas minus ipsam suscipit quaerat totam id sunt aliquam accusantium officia qui consectetur, mollitia laudantium.
-    </div>
+    <div className='chat-box-container' style={side ? {marginLeft:'0.2rem'} : {marginLeft:"auto",marginRight:"0.2rem"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore illum itaque excepturi iusto earum repudiandae maxime nulla, recusandae inventore optio consectetur, maiores impedit molestias nam voluptates. Autem optio corporis dolorem.</div>
   )
 }
 

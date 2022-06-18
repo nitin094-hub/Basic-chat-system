@@ -20,6 +20,7 @@ function Login() {
     try{
       const response = await api.post("api-token-auth/",loginData);
       localStorage.setItem("token",response.data.token);
+      localStorage.setItem("user",response.data.username);
       navigate("/chat-room")
     }
     catch(err){

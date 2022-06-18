@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from chat.views import RegisterView , CustomObtainAuthToken,SearchUserAPIView
+from chat.views import GetThreadAPIView, RegisterView , CustomObtainAuthToken,SearchUserAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('chat/',include('chat.urls')),
     path('api-token-auth/', CustomObtainAuthToken.as_view()),
     path('search/<str:name>',SearchUserAPIView.as_view()),
+    path('get-thread/<str:name>',GetThreadAPIView.as_view()),
 ]

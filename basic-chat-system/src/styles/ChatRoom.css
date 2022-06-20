@@ -1,47 +1,92 @@
-.chat-room-container{
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&display=swap');
+
+.chat-room-container {
   display: flex;
 }
-.chat-room-container .left-container{
-  border: 1px solid red;
-  flex-basis: 20%;
-  padding: 0.5rem;
+.chat-room-container .left-container {
+  flex-basis: 30%;
+  border-right: 1px solid black;
 }
-.chat-room-container .left-container input{
+.chat-room-container .left-container input {
   box-sizing: border-box;
   width: 100%;
 }
-.chat-room-container .left-container .name-container{
-  border: 1px solid black;
-  padding: 0.4rem;
-  margin: 0.7rem 0;
+
+.chat-room-container .left-container .name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
-.chat-room-container .left-container .name-container:hover{
-  background-color: rgb(228, 221, 221);
+.chat-room-container .left-container .name-container h4 {
+  background-color: #f0f2f5;
   cursor: pointer;
+  padding: 0.4rem;
   transition: 0.2s;
+  width: 95%;
+  margin: auto;
 }
-.chat-room-container .left-container .name-container h4{
-  margin: 0;
-}
-.chat-room-container .right-container{
-  border: 1px solid red;
+.chat-room-container .right-container {
   flex-basis: 80%;
 }
-.chat-room-container .right-container .header{
+.chat-room-container .right-container .header {
   padding: 0.5rem;
-  border-bottom: 1px solid black;
+  height: 64px;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.chat-room-container .right-container .chat-container{
-  height: 35rem;
+.chat-room-container .right-container .header .headerImg {
+  width: 3rem;
+  height: 3rem;
+}
+.chat-room-container .right-container .header .headerImg img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
+.chat-room-container .right-container .chat-container {
+  height: 33.6rem;
   overflow: auto;
   display: flex;
   flex-direction: column-reverse;
 }
-.chat-room-container .right-container .chat-write{
+.chat-room-container .right-container .chat-write {
   display: flex;
   gap: 0.4rem;
   padding: 0.2rem;
+  background-color: #f0f2f5;
+  justify-content: center;
 }
-.chat-room-container .right-container .chat-write textarea{
+.chat-room-container .right-container .chat-write textarea {
+  width: 80%;
+  font-size: 1rem;
+  border-radius: 10px;
+  height: 2.5rem;
+  font-family: 'Anek Malayalam', sans-serif;
+  padding: 0.4rem;
+}
+.chat-room-container .right-container .chat-write button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.hello {
+  position: relative;
+}
+.hello .ant-select {
   width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.hello .ant-select:not(.ant-select-disabled) .ant-select-selector {
+  border-radius: 10px;
+}
+.hello
+  .ant-select-show-search.ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  background-color: #f0f2f5;
 }

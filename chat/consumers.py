@@ -36,13 +36,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         
         other_user_chatroom = await self.get_other_user_chatroom(thread)
         
-        response = {
-            "message":message,
-            "send_by":self.user.username,
-            'thread_id':thread_id
-        }
-
-        await self.save_message(message,thread)
+        response = await self.save_message(message,thread)
 
         await self.channel_layer.group_send(
             other_user_chatroom,

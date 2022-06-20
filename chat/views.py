@@ -3,7 +3,7 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
 from chat.models import MessageThread
-from .serializers import UserSerializer
+from .serializers import MessageThreadSerializer, UserSerializer
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -52,8 +52,4 @@ class GetThreadAPIView(GenericAPIView):
             first_user, second_user = second_user, first_user
         thread, _ = MessageThread.objects.get_or_create(first_user=first_user, second_user=second_user)
         
-        return Response({
-            'id': thread.id,
-            'first_user':first_user.username,
-            'second_user':second_user.username
-        })
+        return Response(MessageThreadSerializer(thread).data)

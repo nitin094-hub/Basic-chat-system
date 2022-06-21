@@ -1,0 +1,16 @@
+.chatHeader-container {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f2f5;
+}
+.chatHeader-container .profile-pic {
+  width: 3rem;
+  height: 3rem;
+}
+.chatHeader-container .profile-pic img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
